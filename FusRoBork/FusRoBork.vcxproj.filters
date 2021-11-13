@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{3d0b8af6-d021-448f-8e41-e9336affe88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sundries">
+      <UniqueIdentifier>{5095286b-a962-415a-8079-ec54edf72f1b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FuzRoBorkInternals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INIEditGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INIEditGUI_Res.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INIManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MersenneTwister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiscGunk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SME_Prefix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VersionInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Functors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\MemoryHandler.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\MersenneTwister.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\MiscGunk.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\SME_Prefix.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\StringHelpers.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\UIHelpers.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\Functors.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\INIEditGUI.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\INIEditGUI_Res.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="sundries\INIManager.h">
+      <Filter>sundries</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IArchive.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IBufferStream.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IConsole.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ICriticalSection.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IDatabase.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IDataStream.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IDebugLog.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IDirectoryIterator.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IDynamicCreate.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IErrors.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IEvent.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IFIFO.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IFileStream.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IInterlockedLong.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ILinkedList.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IMemPool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IMutex.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IPipeClient.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IPipeServer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IPrefix.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IRangeMap.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IReadWriteLock.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ISegmentStream.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ISingleton.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ITextParser.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\IThread.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ITimer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ITypes.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Hooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzRoBorkInternals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IRangeMap.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IReadWriteLock.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ISegmentStream.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ISingleton.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ITextParser.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IThread.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ITimer.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ITypes.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IArchive.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IBufferStream.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IConsole.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IDatabase.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IDataStream.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IDebugLog.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IDirectoryIterator.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IDynamicCreate.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IErrors.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IEvent.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IFIFO.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IFileStream.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IInterlockedLong.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IMemPool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IMutex.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IPipeClient.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IPipeServer.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\IPrefix.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="G:\ga\SkyrimDev\Fuz-Ro-D-oh-64-master\VersionInfo.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

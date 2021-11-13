@@ -1,0 +1,336 @@
+News:
+Check out two new features in the latest (1.0b+) release:
+1) Action-based speech: obviously this will get annoying if you don&#39;t use it sparsely, but it&#39;s customizable; it randomly selects from a list of choices from the XML file for each action. You
+can either remove all choices for an action, or add blank items to make it less likely your player will speak.
+https://www.voutube.com/watch?v=zOUsn9h7WyA
+2) Custom speech hotkeys. Pretty self-explanitory, you get 9 hotkeys to set yourself (default number keys 1-9). Useful for creating machinima. In the video below, I use pitch changes to simulate two
+speakers with the same voice. And yes, the knock knock jokes are copyright of me. Use at your peril.
+https://www.youtube.com/watch?v-7q3RZf01ZGU
+Welcome to FuzRoBork&#33;
+Bork, Bork, Bork&#33;
+What is it?
+Fuz Ro Bork is a Text-To-Speech mod for Skyrim based on the existing Fuz Ro DE#39:oh, which it serves as a potential replacement for. It makes use of SKSE, Skyul and Better Dialogue Controls.
+What&#39;s it do?
+Short Description
+It can play synthesized voice audio for both PC and NPC dialogue, read books and loading screens aloud, voice custom action-based speech, and trigger custom speech on hot key press.
+Bullet List Description
+(']Puts voice to PC dialogue choices (optional)
+['JAllows for voice preview of PC dialogue choices (on key press)
+["]Puts voice to unvoiced NPC responses (optional)
+["JReads books on open (optional)
+[']Allows to select from a list of installed TTS voices in MCM menu for each of: PC, female and male NPC, and book narrator
+[*]Allows to change individual rate, volume, and pitch of each speech category
+("]Provides custom XML file for overriding MCM settings, setting custom voices and characteristics for NPCS individually, by race, or even using regular expressions, setting up custom action-
+based speech, and setting custom hot key triggered speech (optional)
+Longer Description
+It starts when you first load your saved game. The exultant war cries of the Nords fade into the background as you are told in no uncertain terms that &#34;most friends and hirelings that are
+following you can be ordered to interact with the world.&#34; But can they talk, you ask silently, the corner of your mouth curling up into a grin. Let&#39;s make &#39;em talk.
+The game loads and you&#39;re greeted by the same old, boring mercenary follower who you originally thought would be barrels of fun, given the hype surrounding her custom dialogue. Turns out,
+she&#39;s dumb as a post. That&#39;s right, witty repartee, no sound. Well, you think to yourself, nothing the Dragonborn can&#39;t fix.
+Ignoring the stupid, canned greeting your other NPC follower assaults your ears with, you slam your pointer finger down on the Esc key, reaching for the mouse to scroll down and click on the MCM
+Configuration menu. &#34;C&#39;mon, c&#39;mon...&#34; you mutter to yourself, audibly, &#34;Be there...&#34; You were up all night working on this one, downloading crappy open source voice
+files until your ears bled, until finally you caved and paid for a sexy Russian voice pack, maxing out your credit card and selling your descendants into slavery for the purpose of...
+&#34;Aha&#33;&#34; Finally, it appears - the three most glorious words you&#39; ve ever seen:
+Fuz Ro Bork
+You sit bolt upright in your chair, jerking the mouse violently in your haste to open the menu, knocking a half-empty can of luke warm Mountain Dew onto the floor in the process. But you don&#39;t
+notice, because the menu has opened, and you can now accomplish what no Nord has ever accomplished before: making those bloody custom mod followers speak.
+Scanning the options impatiently, you select what you already know you&#39;re looking for. You set the PC voice to &#34;US English&#34;, because, hey, nothing says &#34;bad ass&#34; like an
+American; the female NPC you set to &#34;British English&#34;, because sexy. You almost choose the same for male NPC, but then at the last moment switch it to &#34;Australian English&#34;, just
+for kicks.
+You glance briefly at the sliders, then lose interest. Time for that later. You close down the menu, slamming your whole fist down on the abused Esc key. Hefe, your smooth-coat chihuahua, raises his
+head from where he&#39;s dozing on a chair and gives you his &#34;WTF chico? You loco?&#34; look, before getting up and wandering lazily over to sniff at the pool of fluorescent soda seeping into
+your shag carpet.
+But you&#39;re already thousands of miles away in the great white expanse of Skyrim, flaming broad sword at your hip, flaming gay follower at your other hip, and then you turn and are face-to-face
+with six feet of glorious, busty, bouncing Nord genetic simulation in the form of Sonja, the Scandinavian Goddess Mod. You hesitate for a moment; will it be as good as you&#39;d hoped? Or will your
+dreams be shattered once you finally hear your lover speak for the first time? Your finger waivers over the &#34;E&#34; key like a Chaurus tentacle, probing... seeking...
+Finally, you hit the damned key, then watch wide-eyed and slack-jawed as the dialogue menu opens. Scrolling through the options slowly, trepidation seeping like ground water into the dank cave of
+your heart, you find Sonja&#39;s custom dialogue initiator: &#34;So, what size are you anyway?&#34; Holding your breath, you slowły lower your finger once more, shuddering as the cuticle touches
+the cold, black plastic, pressing steadily until the cubic form sinks into the oblivion of the keyboard&#39;s mechanical innards. You know when the key makes contact, because suddenly you hear your
+own voice - well, not your own voice; your character&#39;s voice. And suddenly you know what it sounds like for a computer to ask itself how big its chest is. Oddly satisfying, you note absently.
+And then it&#39;s over, and the moment of reckoning has ocome. You see her lips move before you hear her voice (though you don&#39;t know it yet, this is actually a bug in the mod). But then it
+comes; the words you&#39;ve waited so long to hear from the mouth of the greatest sex machine Tamriel has ever seen:
+&#34;Oh, my babushkas? Why? You want to play the bouncy bouncy?&#34;
+Technical Description
+First, it implements a custom dialogue menu based on Better Dialogue Controls that interrupts the dialogue selection process - when the PC chooses an item, it stops the menu, sends the selected
+item through an as-yet poorly understood mystic portal linking ActionScript to C++.
+From there, the text is given a language, volume, rate of speech, and even pitch, all based on preferences set in the mod&#39;s MCM menu.
+Then, all that data is sent to something called SAPI; an ancient (Windows XP era) Text-To-Speech engine buried deep in the dark recesses of your Windows apparatus that gives voice to the text in
+its own thread, as though your character WAS REALLY TALKING. Awesomesauce.
+Next, as if your socks weren&#39;t already rocked by this, it piggybacks on functions borrowed from Fuz Ro DR#39;oh, which already catches NPC dialogue that doesn&#39;t have a corresponding
+audio file and forces Skyrim to show subtitles, making the NPC&#39;s lips move as well. This mod, a replacement for Fuz Ro D&#39;oh, sends the NPc&#39;s subtitle text hurtling through the
+eloctronosphere after the PC&#39;s data, undergoing the same language/voice/rate/volume/pitch modifications, triggering glorious machine-made speech mimicking the human voice and making it
+look like the NPC is actually talking as well.
+Then, optionally, it listens for a whole slew of actions like when you hit or are hit, when you kill or pick a lock, etc., and plays custom speech set by you in the XML file.
+Also, if you want, you can set a key to press and preview the speech for the currently highlighted dialogue choice and even have it read books to you - both awesome for visually impaired or dyslexic
+dragon slayers. You can also set up to 9 hot keys to play custom speech.
+TL;DR: Description
+You know... magic.
+Swedish Chef Description
+Er vork dee hurg, dee mud dee heer bepleyin dee synzeeseezed shpeeken fur dee playoor und dee oodeers in dee game. Dee shmirk dee ver, dee mud bereedins un dee buuks und dee loodin
+screenees. Bork Bork Bork&#33;
+What&#39;s it don&#39;t do?
+It doesn&#39;t pronounce &#34;draugra&#34; correctly (makes two of us).
+It doesn&#39;t let you skip the audio, but you can just end the conversation and walk away before the audio is done, if you wanna be that way.
+It doesn&#39;t play unvoiced ambient dialogue... not yet, anyway. Actually, l&#39;m not even sure if that&#39;s a thing.
+What&#39;s it look like?
+Summa like this:
+https://www.youtube.com/watch?v=R4eKyW 6CVY
+https://www.voutube.com/watch?v-7q3R2f01ZGU
+https://www.youtube.com/watch?v=zOUsn9h7WyA
+How do I get it?
+1. You need to have SKSE (version 1.7.3 - make surea#33;) AND SkyUl installed.
+2. Install this mod with NMM, choosing the components you want to use. dialoguemenu.swf is for dialogue; without it, no dialogue voicing. book.swf is for reading books; without it, no book reading.
+loadingmenu.swf is for, you guessed it, speaking loading screens. Unless you already have custom versions of any of these files, just install them all; they shouldn&#39;t change how the game looks.
+This mod also overwrites Fuz Ro D&#39;oh, on purpose, because it provides the same functionality, more or less.
+You can also just open the 7z file and extract the contents to Skyrim&#92;Data. Maybe. Maybe it&#39;s safer this way.
+3. For NPC dialogue voicing, you need a mod that has custom, unvoiced dialogue; this mod doesn&#39;t currently have an option to replace already voiced dialogue. Look over voiceless
+enhancements, really; some likety are beneficial. dot com
+4. You need to turn off in-game subtitles to hear NPC TTS audio. Don&#39;t ask me, but apparently this is non-negotiable. NPC TTS speech won&#39;t play if subtitles are on. I&#39;l try to look
+into why if I get a chance (i.e. probably never).
+5. Oh, and you may need to install a TTS voice. Good luck with that. This mod doesn&#39;t have any audio-making magic; it uses the audio-making magic already present in your Microsoft-enhanced
+Windows apparatus. The best free languages l&#39;ve found are here:
+http://www.microsoft.com/en-ca/download/details.aspx?id-27224
+Of the files at the above link, only those with &#34;TTS&#34; in their names are useful for this mod.
+You may also need to install the following runtime to use these voices:
+http://www.microsoft.com/en-us/download/confirmation.aspx?id-27225
+Windows does have inbred (in more ways than one) TTS capability as well, so you can look in the Start Menu/Metro thing for &#34; Text To Speech&#34;. If you&#39;re eager to spend money, there
+are commercial alternatives available, like the one used in the above YouTube video. Demos exist to try them, too. Whatever you do, though, DON&#39;T INSTALL MICROSOFT SAPI SDK 5.1 I swear
+it contains daedric draugr daemons designed by disgruntled dwemer. I spent hours trying to figure out why US English didn&#39;t work, before remembering installing that hell-spawned piece of
+demonic code. Just don&#39;t.
+6. Once the mod is installed, open Skyrim, go to the MCM menu under &#34;Fuz Ro Bork&#34; and choose your settings. All installed languages should show up if you click on the language entries in
+the Voices tab. If Fuz Ro Bork doesn&#39;t show up under MCM, try closing then reopening the menu.
+welcome.
+it still doesn&#39;t show up... well, we may have a problem. Let me know, feedback is always
+How do I super-hacker-ninja pimp it?
+As of version 0.6, we&#39;re using MCM for configuration, so yay, no more editing INI files. To change settings, go to the MCM menu (it&#39;s in the main save/load/etc. menu) and look for the Fuz
+Ro Bork entry (may take a bit for this to appear the first time). The settings should be pretty self-explanatory, really. Choose languages for PC and both female and male NPC, also choose rate for
+each, and volume.
+If you really want to pimp it, though, there&#39;s also a custom xml file at Data&#92;skse&#92;plugins&#92;FuzRoBork.xml that looks something like this:
+QUOTE
+alt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+alt; config&gt;
+alt;settings&gt;
+alt;SkipEmptyResponses&gt;1&lt; /SkipEmptyResponses&gt;&lt;&#33;-- 0 = false, 1 = true --agt;
+alt;PlayPlayerDialogue&gt;1&lt;/PlayPlayerDialogue&gt;
+alt;PlayNPCDialogue&gt;1&lt;/PlayNPCDialogue&gt;
+&lt;PlayBookPages&gt;1&lt;/PlayBookPagesagt;&lt;&#33;-- uses Narrator voice --agt;
+&lt;PlayLoadingScreen Textâgt;0&lt;/PlayLoadingScreen Textâgt;&lt;&#33;-- uses Narrator voice --agt;
+&lt;VoicePlayerActions&gt;0&lt;/VoicePlayerActions&gt;&lt;&#33;-- uses Player voice --agt;
+alt;SpeakParenthesesagt;0&lt;/SpeakParentheses&gt;&lt; &#33;-- set to 1 to say things like &#34; (Persuade)&#34; or &#34;(10 Gold)&#34; --agt;
+alt;EnableHotkeys&gt;0&lt;/EnableHotkeys&gt;&lt;&#33;-- defined below, no matter whether using overrides or not --agt;
+alt;MsPerWordsilenceagt;300alt;/MsPerWordsilence&tgt;&lt;&#33;-- used for lip synching NPCS; adjusted according to individual voice rates below --agt;
+alt;&#33;-- for language strings below, look in the registry under the following locations:
+HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Wow6432Node&#92;Microsoft&#92;Speech Server&#92;v11.0&#92;Voices&#92; Tokens (for new MS voices on 64-bit systems)
+HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Microsoft&#92;Speech Server&#92;v11.0&#92;Voices&#92; Tokens (for new MS voices on 32-bit systems)
+HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Wow6432Node&#92;Microsoft&#92;Speech&#92;Voices&#92;Tokens (for 64-bit systems)
+HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Microsoft&#92;Speech&#92;Voices&#92;Tokens (for 32-bit systems)
+and look in the attributes key for the name of your voice. --&gt;
+&lt;PlayerLanguage&gt; IVONA 2 Gwyneth&lt;/PlayerLanguage&gt;
+alt;FemaleLanguage&gt;Microsoft Server Speech Text to Speech Voice (en-US, ZiraPro)alt;/FemaleLanguage&gt;
+alt;MaleLanguage&gt;IVONA 2 Eric&lt;/MaleLanguage&gt;
+alt;NarratorLanguage&gt;eSpeak-enalt;/NarratorLanguage&gt;
+alt;PlayerVoiceRate&gt;0&lt;/PlayerVoiceRate&gt;&lt;&#33;-- 0 is normal, 10 is fastest, -10 is slowest --agt3;
+alt;FemaleVoiceRate&gt;1&lt;/FemaleVoiceRate&gt;
+alt;MaleVoiceRate&gt;-1alt;/MaleVoiceRate&gt;
+alt;NarratorVoiceRate&gt;1&lt;/NarratorVoiceRate&gt;
+alt;PlayerVolume&gt;50.0alt;/PlayerVolume&gt;&lt;&#33;-- 0-100% --&gt;
+alt;FemaleVolume&gt;50.0&lt;/FemaleVolume&gt;
+alt;MaleVolume&gt;30.0&lt;/MaleVolume&gt;
+alt;NarratorVolumeagt; 30.0&lt; /NarratorVolume&gt;
+alt;PlayerVoicePitch&gt;0&lt;/PlayerVoicePitchagt;&lt;&#33;-- 0 is normal, 10 is highest, -10 is lowest --agt;
+alt;FemaleVoicePitch&gt;1&lt;/FemaleVoicePitch&gt;
+alt;MaleVoicePitch&gt;-2&lt;/MaleVoicePitch&gt;
+alt;NarratorVoicePitch&gt;-1&lt;/NarratorVoicePitch&gt;
+alt;/settings&gt;
+alt;npcs&gt;
+alt;npc name=&#34;Delphine&#34;&gt;&lt;&#33;-- this should work --agt;
+alt;language&gt;VONA 2 Amy&lt;/language&gt;
+&lt;volume&gt;30.0alt;/volume&gt;
+alt;pitch&gt;-1&lt;/pitch&gt;
+alt;/npc&gt;
+alt;npc name=&#34;."Guard&#34;&gt;&lt;&#33;-- make sure if you use Regular Expressions that you don&#39;t mess up or it&#39;s CTD for you&#33; --agt;
+&lt;language&gt;IVONA 2 Brianalt; /language&gt;
+&lt;volume&gt;50.0alt;/volume&gt;
+&lt;pitch&gt;-3&lt;/pitch&gt;
+alt;/npc&gt;
+alt;npc race=&#34;Argonian&#34;&gt;alt;&#33;-- this should work --agt;
+&lt;language&gt;Microsoft Server Speech Text to Speech Voice (it-IT, Lucia)alt;/language&gt;
+alt;volume&gt;50.0alt;/volume&gt;
+alt;pitch&gt;1&lt;/pitch&gt;
+alt;rate&gt;2&lt;/rate&gt;
+alt;/npc&gt;
+alt;/npcs&gt;
+&lt;pc name-&#34;Standard&#34;&gt;&lt;&#33;-- for now it just takes the first pc, so the name is useless --&gt;
+alt; topic name=&#34;hurt&#34;&gt;
+&lt;optionagt;[pitch absmiddle=&#34;3&#34;][rate absspeed-&#34;4&#34;]Ouch&#33;[/rate][/pitch]&lt;/optionagt; &lt;&#33;-- for info on these modified XML tags, see
+https://msdn.microsoft.com/en-us/library/ms717077 28v-vs.85 29.aspx --&gt;
+alt;option&gt;[rate absspeed=&#34;5&#34;]Tis but a scratch&#33;[/rate]&lt;/option&gt;
+alt;option&gt;[rate absspeed-&#34;5&#34;]Hey, that hurt&#33;[/rate]&lt;/option&gt;
+alt;option&gt;[rate absspeed=&#34;4&#34;]Jerk&#33;[/rate]alt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;hurt_bad&#34;&gt;
+alt; optionagt;[rate absspeed-&#34;4&#34;]Ouch ouch ouch&#33;[/rate]&lt;/option&gt;
+&lt;option&gt;[rate absspeed=&#34;3&#34;]Damn it&#33;[/rate]&lt;/optionagt;
+alt;option&gt;[rate absspeed=&#34;4&#34;]Ow ow ow ow ow&#33;[/rate]&lt;/option&gt;
+alt;option&gt;[rate absspeed=&#34;3&#34;]Son of a...[/rate]&lt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;dying&#34;&gt;
+&lt;optionagt;[rate absspeed-&#34;-10&#34;]Dear god&#33;[/rate]&lt;/option&gt;
+alt;option&gt;[rate absspeed=&#34;-10&#34;]Help&#33;[/rate]&lt;/option&gt;
+alt;option&gt;[rate absspeed-&#34;-10&#34;]No&#33;[/rate] alt;/optionagt;
+&lt;/topicagt;
+&lt; topic name=&#34;loaded&#34;&gt;
+&lt;option&gt;Another day, another chance
+alt;optionagt;I love the smell of Skooma in the morning.&lt;/optionagt;
+&lt;/topic&gt;
+alt; topic name=&#34;punch&#34;&gt;
+alt;option&gt;Boom&#33;&lt;/option&gt;
+alt;option&gt;Kahblam&#33;&lt;/option&gt;
+&lt;option&gt;Pow&#33;&lt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;swing&#34;&gt;
+alt;option&gt;[rate absspeed-&#34;4&#34;]Take that&#33;[/rate]alt;/option&gt;
+alt;option&gt;[rate absspeed-&#34;4&#34;]Eat it&#33;[/rate]alt;/optionagt;
+&lt; optionagt;[rate absspeed=&#34;2&#34;]For the win&#33;[/rate]&lt;/option&gt;
+&lt;option&gt;[rate absspeed-&#34;4&#34;]Die, damn you&#33;[/rate]&lt;/optionagt;
+alt;/topicagt;
+alt; topic name=&#34;cast_spell&#34;&gt;
+&lt;option&gt; Abracadabraalt;/option&gt;
+&lt;optionagt;Hocus Pocusalt;/option&gt;
+alt;optionagt;Bibbidy bobbedy booalt;/option&gt;
+alt;/topicagt;
+&lt; topic name=&#34;fire_staffa#34;&gt;
+alt;/topicagt;
+alt; topic name=&#34; fire_bow&#34;&gt;
+&lt;/topicagt;
+kick some bad guy ass.alt;/optionagt;
+&lt; topic name=&#34;draw_weapon&#34;&gt;
+&lt;option&gt;ong garde&#33;&lt;/option&gt;
+alt;option&gt;Let&#39;s get it on&#33;&lt;/option&gt;
+&lt;option&gt; Time to kick some Drow Gur butt&#33;&lt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;sheathe_weapon&#34;&gt;
+alt;option&gt; That&#39;s enough of that.&lt;/optionagt;
+&lt;optionagt; All in a day&#39;s work.&lt;/optionagt;
+&lt;/topic&gt;
+alt; topic name=&#34;dead&#34;&gt;
+&lt;option&gt;Oh, what a cruel, cruel, world.&lt;/option&gt;
+alt;option&gt;Sovengarde awaits&#33;&lt;/option&gt;
+&lt;option&gt; To reload, or not to reload, that is the question. &lt;/optionagt;
+&lt;option&gt;Well, that sucked horse&#39;s bottom.&lt;/option&gt;
+&lt;option&gt;Way to go, you but monkey.&lt;/optionagt;
+alt;option&gt;You know what, dude? You suck, and now l&#39;m dead because of it. Thanks... just... thanks. &lt;/optionagt;
+alt;/topicagt;
+alt; topic name=&#34;sit&#34;&gt;
+&lt;optionagt;Yep, time to take a load off.&lt;/optionagt;
+&lt;/topicagt;
+alt;topic name=&#34;stand&#34;&gt;
+&lt;optionagt;Back to work&#33;&lt;/optionagt;
+alt;/topic&gt;
+&lt; topic name=&#34;nap&#34;&gt;
+alt;option&gt;Just a short napa#33;&lt;/option&gt;
+alt;/topic&gt;
+&lt; topic name=&#34;sleep&#34;&gt;
+alt;option&gt; Time to sleep&#33;&lt;/option&gt;
+alt;/topicagt;
+&lt; topic name-&#34;hibernate&#34;&gt;
+alt;option&gt; Time to hibernate&#33;&lt;/optionagt;
+alt;/topicagt;
+alt; topic name=&#34;sleep_interrupted&#34;&gt;
+alt;option&gt;Who dares disturb my slumber?&lt;/option&gt;
+alt;option&gt;Buzz off, l&#39;m trying to sleep here.&lt;/option&gt;
+alt;/topicagt;
+&lt; topic name=&#34;sleep_ended&#34;&gt;
+alt;option&gt;Wakey, wakey.&lt;/option&gt;
+alt;/topicagt;
+alt;&#33;--
+&lt; topic name=&#34;power_swing&#34;&gt;
+alt;option&gt;On your knees&#33;&lt;/option&gt;
+&lt;option&gt;Can you feel that?&lt;/option&gt;
+alt;/topicagt;
+--agt;
+&lt; topic name=&#34;equip_better_weapon&#34;&gt;
+alt;option&gt;Oh yeah&#33;&lt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;equip_bow&#34;&gt;
+alt;option&gt; l&#39;ll show &#39;em where they can take an arrow.alt;/option&gt;
+&lt;optionagt; Just call me Robin Hood.&lt;/option&gt;
+alt;/topicagt;
+&lt; topic name=&#34;equip_weapon&#34;&gt;
+alt;option&gt;&lt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;Sneak&#34;&gt;
+&lt;optionagt;Be vewy, vewy quiet.&lt;/option&gt;
+&lt;option&gt; l&#39;m hunting Wah bits.alt;/option&gt;
+&lt;optionagt; It&t#39;s Wah bit season.&lt;/option&gt;
+alt;option&gt;&lt;/optionâgt;
+&lt;optionagt; &lt; /optionagt;
+&lt;option&gt;&lt;/option&gt;
+alt;/topicagt;
+alt; topic name=&#34;Kill&#34;&gt;
+&lt;optionagt; Another notch in my belt&#33;&lt;/option&gt;
+alt;option&gt;Who duh man now?alt;/option&gt;
+&lt;optionagt; Another useless piece of trash bites the dust&#33;&lt;/option&gt;
+alt;/topicagt;
+&lt; topic name=&#34;level&#34;&gt;
+alt;optionagt;I [emph]am[/emph] Dovakin. alt;/optionagt;
+alt;optionagt; Thank you, thank you, no applause, please.&lt;/optionagt;
+alt;/topicagt;
+alt; topic name=&#34;pick_lock&#34;&gt;
+alt;option&gt;Piece of cake.alt;/option&gt;
+alt;option&gt;Ahem, can anyone say Master Thief?&lt;/option&gt;
+alt;/topicâgt;
+alt;/pcagt;
+alt;/pcs&gt;
+alt;hotkeys&gt;&lt;&#33;-- currently eight hot keys are used, set the key here (if using xml overrides) or in MCM. For codes, see here
+http://www.creationkit.com/Input Script DXScanCodes --&gt;
+&lt;hotkey key-&#34;2&#34;&gt;)Hey, baby, if I (Persuade) told you you had a beautiful body, would you hold it against me?&lt;/hotkey&gt;&lt;&#33;-- 1 --agt;
+alt;hotkey key=&#34;3&#34;&gt;[pitch absmiddle=&#34;-10&#34;]Knock knock. [/pitch]&lt;/hotkey&gt;&lt;&#33;-- 2 --agt;
+alt;hotkey key-&#34;4&#34;&gt;[pitch absmiddle-&#34;10&#34;]Who&#39;s there?[/pitch]&lt;/hotkey&gt;&lt;&#33;-- 3 --&gt;
+alt;hotkey key-&#34;5&#34;&gt;[pitch absmiddle=&#34;-10&#34;]Dovakin.[/pitch]&lt;/hotkey&gt;&lt;&#33;-- 4 --&gt;
+alt;hotkey key=&#34;6&#34;&gt;[pitch absmiddle=&#34;10&#34;]Dovakin [emph]who?[/emph][/pitch]&lt;/hotkey&gt;&lt;&#33;-- 5 --agt;
+alt;hotkey key-a&#34;7&#34;&gt;[pitch absmiddle-&#34;-10&#34;]Dovakin door is locked; let me in&#33;[/pitch]&lt;/hotkey&gt;&lt;&#33;-- 6 --agt;
+alt;hotkey key=a&#34;8&#34;&gt;[pitch absmiddle=&#34;-10&#34;]Ulfric[/pitch]&lt;/hotkey&gt;&lt;&#33;-- 7 --agt;
+alt;hotkey key=&#34;9&#34;&gt;[pitch absmiddle=&#34;10&#34;]Ulfric who?[/pitch]&lt;/hotkey&gt;&lt;&#33;-- 8 --agt;
+alt;hotkey key-&#34;10&#34;&gt;[pitch absmiddle=&#34;-10&#34;]Ulfrickin bust this door down if you don&#39;t open up&#33;[/pitch]&lt;/hotkey&gt;&lt;&#33;-- 9 --&gt;
+alt;/hotkeys&gt;
+&lt;/config&gt;
+Especially the part under npcs allows you pretty advanced control over who sounds like what. Regular expressions seem to work for both &#34;race&#34; and &#34;name&#34; attributes as shown
+above; beware - a broken regex means a CTD for you&#33;
+The part under pcs is experimental; use at your own risk. You might, like, blow up or something.
+Note the use of BBCode type tags - these are just standard TTS XML tags, modified to not interfere with the XML file. Syntax is here:
+https://msdn.microsoft.com/en-us/library/ms71707
+=vs. 85%29.aspx
+What does it do wrong? (A.K.A. Known Bugs)
+This mod is certified perfect in every way. It even farts rainbows.
+Who should I thank?
+shadeMe, for sharing the source code of his Fuz Ro D&#39;oh mod. Not to mention, Bethesda, the authors of SKSE, SkyUI, Better Dialogue Controls, and of course the NexusMods people. And me. Or
+not, it&#39;s cool.
+Does the Swedish Chef make any appearance in this mod besides the awesome title?
+Sadly, no. But there&#39;s a nifty picture of my favourite muppet in the screenshots section. Sadly, it&#39;s not actually a screenshot, it&#39;s a gimped picture. I am working on a Bork, Bork,
+Bork shout, though, so there&#39;s that. You want proof, you say? Why certainly:
+https://www.youtube.com/watch?v=aH- TIWS-AW
+Disclaimer
+I offer no warranty, besides that it WOMM. Today. Sort of.
+on
+Works
+my
+machine
+If it crashes, uninstall it. G&#39;Night:)
+Geek Stuff
+The source code is available on GitHub:
+https://github.com/aedenthom/fuzrobork
+Changelog:
+1.0b - added custom hotkey speech, added action-based speech, added option for parenthetical text
+0.12 - added ability to select from list of installed languages in MCM; added pitch control
+0.11 - added ability to use MS Speech Platform voices (ttp://www.microsoft.com/en-ca/download/details.aspx?id%-D27224); fixed XML override NPCS
+0.10 - removed dependency on custom hud
+0.9 - fomod menu, xml overrides
+0.8.1 - may fix the MCM menu not showing thing. Probably not.
+0.8 - XML overrides working, I think; book reading&#33;, HUD message reading, voice testing via MCM
+0.7 - added option to turn off NPC voicing, fixed option to turn off PC voicing
+0.6 - MCM integration (no more INI files), dialogue entry preview
+0.5 - totally revamped - PC speech is now independent of the NPC speech; their lips won&#39;t move when we speak. Much better timing, integration.
+0.4.1 - fixed PC voice switch, fixed dialogue choice list speaking (use * on numpad)
+0.4 - added back PC voice
+
